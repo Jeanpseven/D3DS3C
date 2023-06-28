@@ -1,19 +1,19 @@
 import os
+import random
 
-ascii_art = """
-  
- /$$$$$$$  /$$$$$$$$ /$$$$$$$   /$$$$$$  /$$$$$$$$  /$$$$$$ 
-| $$__  $$| $$_____/| $$__  $$ /$$__  $$| $$_____/ /$$__  $$
-| $$  \ $$| $$      | $$  \ $$| $$  \__/| $$      | $$  \__/
-| $$  | $$| $$$$$   | $$  | $$|  $$$$$$ | $$$$$   | $$      
-| $$  | $$| $$__/   | $$  | $$ \____  $$| $$__/   | $$      
-| $$  | $$| $$      | $$  | $$ /$$  \ $$| $$      | $$    $$
-| $$$$$$$/| $$$$$$$$| $$$$$$$/|  $$$$$$/| $$$$$$$$|  $$$$$$/
-|_______/ |________/|_______/  \______/ |________/ \______/ 
-                                                            
-"""
+def display_random_ascii_art():
+    ascii_arts_folder = "ascii_arts"
+    ascii_files = os.listdir(ascii_arts_folder)
+    random_file = random.choice(ascii_files)
+    ascii_file_path = os.path.join(ascii_arts_folder, random_file)
+    
+    with open(ascii_file_path, "r") as file:
+        ascii_art = file.read()
+    
+    print(ascii_art)
 
-print(ascii_art)
+# Exibe um ASCII art aleatório
+display_random_ascii_art()
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
