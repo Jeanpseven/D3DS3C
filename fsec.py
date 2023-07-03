@@ -1,5 +1,6 @@
 import os
 import random
+from scapy.all import *
 
 def display_random_ascii_art():
     ascii_arts_folder = "ascii_arts"
@@ -20,8 +21,6 @@ def clear_screen():
 
 def script1():
     print("Executando Script 1 (FindNearDevice)")
-   import os
-from scapy.all import *
 
 def get_distance(rssi):
     # Fórmula de cálculo aproximado da distância
